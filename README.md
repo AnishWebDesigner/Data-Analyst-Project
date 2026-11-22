@@ -4,9 +4,10 @@
 
 | | |
 |---|---|
-| **Student name** | Anish Kumar |
-| **Roll number** | 2026M01410002 |
-| **Repository** | https://github.com/AnishWebDesigner/Data-Analyst-Project |
+| **Student Name** | Anish Kumar |
+| **Roll No.(Admission No.)** | 2026M01410002 |
+| **Repository Link** | https://github.com/AnishWebDesigner/Data-Analyst-Project |
+| **Date of Submission** | 21 November 2026 |
 
 ---
 

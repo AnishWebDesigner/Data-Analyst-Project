@@ -1,0 +1,131 @@
+test_a_tiny_selection_does_not_crash (test_dashboard.DashboardPageTests.test_a_tiny_selection_does_not_crash)
+One region, one category, one month and one year still gives a page without an exception. ... ok
+test_all_ten_charts_are_drawn (test_dashboard.DashboardPageTests.test_all_ten_charts_are_drawn)
+Ten charts are drawn and none of them fell back to the error message. ... ok
+test_choosing_a_region_changes_the_numbers (test_dashboard.DashboardPageTests.test_choosing_a_region_changes_the_numbers)
+Picking only the East changes total sales and the order count, and the page still draws all charts. ... ok
+test_empty_selection_shows_a_warning (test_dashboard.DashboardPageTests.test_empty_selection_shows_a_warning)
+If no order matches the filters, the page shows one warning, stops, and draws no charts. ... ok
+test_kpis_match_the_data (test_dashboard.DashboardPageTests.test_kpis_match_the_data)
+With no filters, the numbers on the page are the real totals. ... ok
+test_kpis_say_how_they_compare_with_all_data (test_dashboard.DashboardPageTests.test_kpis_say_how_they_compare_with_all_data)
+Each KPI has a small comparison line with the full data. ... ok
+test_page_has_six_filters (test_dashboard.DashboardPageTests.test_page_has_six_filters)
+The sidebar offers six filters; the brief asks for at least three. ... ok
+test_page_shows_six_kpis (test_dashboard.DashboardPageTests.test_page_shows_six_kpis)
+The page shows six KPIs, including the four the brief asks for. ... ok
+test_an_empty_selection_gives_zeros (test_dashboard.KpiAndFilterTests.test_an_empty_selection_gives_zeros)
+If no order matches, the KPIs are zero and nothing divides by zero. ... ok
+test_every_filter_narrows_the_real_data (test_dashboard.KpiAndFilterTests.test_every_filter_narrows_the_real_data)
+Each of the six filters removes some rows when one value is picked. ... ok
+test_filters_combine_and_empty_means_everything (test_dashboard.KpiAndFilterTests.test_filters_combine_and_empty_means_everything)
+Filters work together (AND). A filter left empty keeps all rows. ... ok
+test_kpis_on_three_known_orders (test_dashboard.KpiAndFilterTests.test_kpis_on_three_known_orders)
+Sales 4800, profit 1400, margin 29.17%, average order 1600, 3 orders, one returned. ... ok
+test_day_first_with_slashes (test_data_cleaning.DateTests.test_day_first_with_slashes)
+22/07/2024 is read day first. ... ok
+test_iso_date (test_data_cleaning.DateTests.test_iso_date)
+2024-07-22 is read as 22 July 2024. ... ok
+test_missing_date_stays_missing (test_data_cleaning.DateTests.test_missing_date_stays_missing)
+An empty date stays empty and is not filled with anything. ... ok
+test_month_first_with_dashes (test_data_cleaning.DateTests.test_month_first_with_dashes)
+07-22-2024 is read month first. ... ok
+test_month_name_date (test_data_cleaning.DateTests.test_month_name_date)
+22-Jul-2024 is read correctly. ... ok
+test_unclear_dash_date_is_month_first (test_data_cleaning.DateTests.test_unclear_dash_date_is_month_first)
+05-03-2024 could be two dates; the file's pattern says month first, so it is 3 May. ... ok
+test_gender_spellings (test_data_cleaning.LabelTests.test_gender_spellings)
+All eight spellings end up as Male or Female. ... ok
+test_region_spellings (test_data_cleaning.LabelTests.test_region_spellings)
+Short forms such as Sth and Nort are mapped to the right region. ... ok
+test_unknown_region_raises_an_error (test_data_cleaning.LabelTests.test_unknown_region_raises_an_error)
+A region name I do not know stops the cleaning instead of being dropped quietly. ... ok
+test_delivery_before_order_is_removed (test_data_cleaning.RuleTests.test_delivery_before_order_is_removed)
+A delivery date before the order date is impossible, so the date is emptied. ... ok
+test_discount_is_worked_out_from_sales (test_data_cleaning.RuleTests.test_discount_is_worked_out_from_sales)
+Quantity 3, price 1000 and sales 2400 means the discount must have been 0.20. ... ok
+test_duplicate_keeps_the_fuller_copy (test_data_cleaning.RuleTests.test_duplicate_keeps_the_fuller_copy)
+When a transaction appears twice, the copy with fewer empty cells is kept. ... ok
+test_impossible_age_comes_from_the_same_customer (test_data_cleaning.RuleTests.test_impossible_age_comes_from_the_same_customer)
+An age of 999 is replaced by the age on the same customer's other order. ... ok
+test_impossible_discount_is_replaced (test_data_cleaning.RuleTests.test_impossible_discount_is_replaced)
+A discount of 1.5 is impossible, so it is replaced by the value the sale implies. ... ok
+test_income_typo_is_fixed (test_data_cleaning.RuleTests.test_income_typo_is_fixed)
+An income twelve times the customer's usual one is treated as a typing error. ... ok
+test_missing_rating_is_not_invented (test_data_cleaning.RuleTests.test_missing_rating_is_not_invented)
+A missing customer rating stays missing. ... ok
+test_missing_satisfaction_gets_its_own_label (test_data_cleaning.RuleTests.test_missing_satisfaction_gets_its_own_label)
+A missing satisfaction level becomes 'Not Recorded'. ... ok
+test_raw_data_is_not_changed (test_data_cleaning.RuleTests.test_raw_data_is_not_changed)
+Cleaning works on a copy, so the raw frame is the same afterwards. ... ok
+test_delivery_days_are_never_negative (test_data_cleaning.WholeFileTests.test_delivery_days_are_never_negative)
+Delivery_Days is empty or zero and above, never negative. ... ok
+test_every_order_date_was_understood (test_data_cleaning.WholeFileTests.test_every_order_date_was_understood)
+No Order_Date is left empty, so all four date styles were parsed, and they cover 2023 and 2024. ... ok
+test_every_rule_passes (test_data_cleaning.WholeFileTests.test_every_rule_passes)
+All nine rules in check() hold for the cleaned data. ... ok
+test_four_regions_and_two_genders (test_data_cleaning.WholeFileTests.test_four_regions_and_two_genders)
+Region has exactly 4 values and Gender exactly 2. ... ok
+test_numbers_found_in_the_raw_file (test_data_cleaning.WholeFileTests.test_numbers_found_in_the_raw_file)
+The audit finds 84 repeated IDs, 8 gender labels, 12 region labels and 6 impossible ages. ... ok
+test_seven_thousand_unique_orders_remain (test_data_cleaning.WholeFileTests.test_seven_thousand_unique_orders_remain)
+After cleaning there are 7,000 rows and every Transaction_ID is different. ... ok
+test_details_in_config_are_filled_in (test_report.DetailsAndSnapshotTests.test_details_in_config_are_filled_in)
+Name, roll number and GitHub link are the real ones, not placeholders. ... ok
+test_every_listed_source_file_exists (test_report.DetailsAndSnapshotTests.test_every_listed_source_file_exists)
+All files listed for the code snapshot exist. ... ok
+test_file_names_start_with_the_roll_number (test_report.DetailsAndSnapshotTests.test_file_names_start_with_the_roll_number)
+Both PDFs are named with the roll number so they are easy to find. ... ok
+test_snapshot_has_every_file_and_the_roll_number_on_every_page (test_report.DetailsAndSnapshotTests.test_snapshot_has_every_file_and_the_roll_number_on_every_page)
+The code snapshot contains every source file, and each of its pages shows the roll number. ... ok
+test_a_real_pdf_is_made (test_report.ReportTests.test_a_real_pdf_is_made)
+The report file starts with %PDF and is a decent size. ... ok
+test_all_thirteen_charts_and_captions_are_in_it (test_report.ReportTests.test_all_thirteen_charts_and_captions_are_in_it)
+The report contains 13 charts and 13 captions. ... ok
+test_cover_shows_name_roll_number_and_github_link (test_report.ReportTests.test_cover_shows_name_roll_number_and_github_link)
+The text on page 1 has the name, roll number and GitHub link. ... ok
+test_page_count_is_sensible (test_report.ReportTests.test_page_count_is_sensible)
+Between 8 and 20 pages: a compact report, not a book. ... ok
+test_roll_number_is_on_every_page (test_report.ReportTests.test_roll_number_is_on_every_page)
+Each page footer contains the roll number and the student name. ... ok
+test_captions_are_two_or_three_sentences (test_visualizations.CaptionTests.test_captions_are_two_or_three_sentences)
+The brief asks for 2 to 3 sentences under every chart. ... ok
+test_captions_have_no_empty_numbers (test_visualizations.CaptionTests.test_captions_have_no_empty_numbers)
+No caption contains 'nan' or 'inf'. ... ok
+test_delivery_caption_matches_the_data (test_visualizations.CaptionTests.test_delivery_caption_matches_the_data)
+The delivery caption quotes the real average days for Same-Day orders. ... ok
+test_every_chart_has_a_caption (test_visualizations.CaptionTests.test_every_chart_has_a_caption)
+There is one caption for each of the 13 charts. ... ok
+test_region_caption_names_the_right_regions (test_visualizations.CaptionTests.test_region_caption_names_the_right_regions)
+The region caption names the region with the highest sales and the one with the lowest. ... ok
+test_returns_caption_matches_the_data (test_visualizations.CaptionTests.test_returns_caption_matches_the_data)
+The returns caption quotes the real return rate of low-satisfaction orders. ... ok
+test_a_very_small_selection_does_not_crash_the_returns_and_delivery_charts (test_visualizations.ChartTests.test_a_very_small_selection_does_not_crash_the_returns_and_delivery_charts)
+One category, one region and one month still leaves enough rows for these two charts. ... ok
+test_all_seven_required_chart_types_are_there (test_visualizations.ChartTests.test_all_seven_required_chart_types_are_there)
+Line, bar, histogram, box, scatter, donut and heatmap are all used. ... ok
+test_axes_have_labels (test_visualizations.ChartTests.test_axes_have_labels)
+Every chart except the donut has a label on both axes. ... ok
+test_chapters_follow_the_story_order (test_visualizations.ChartTests.test_chapters_follow_the_story_order)
+The charts are ordered by chapter: trend, regions and products, customers, drivers, heatmap, returns and delivery. ... ok
+test_charts_still_draw_after_filtering (test_visualizations.ChartTests.test_charts_still_draw_after_filtering)
+With one region and one year selected every chart still draws. ... ok
+test_charts_with_more_than_one_series_have_a_legend (test_visualizations.ChartTests.test_charts_with_more_than_one_series_have_a_legend)
+The line chart, both scatter plots and the two histograms show a legend. ... ok
+test_every_chart_has_a_descriptive_title (test_visualizations.ChartTests.test_every_chart_has_a_descriptive_title)
+Titles are sentences that say something, not just a column name. ... ok
+test_nothing_is_three_dimensional (test_visualizations.ChartTests.test_nothing_is_three_dimensional)
+No chart uses 3D axes. ... ok
+test_png_files_are_saved (test_visualizations.ChartTests.test_png_files_are_saved)
+save_all_charts writes 13 non-empty PNG files. ... ok
+test_the_weakest_region_is_the_only_red_bar (test_visualizations.ChartTests.test_the_weakest_region_is_the_only_red_bar)
+In the region chart exactly one bar is coral, and it is the region with the lowest sales. ... ok
+test_there_are_thirteen_charts (test_visualizations.ChartTests.test_there_are_thirteen_charts)
+The project has 13 charts, which is more than the 10 the brief asks for. ... ok
+test_two_leading_categories_are_teal_and_the_rest_grey (test_visualizations.ChartTests.test_two_leading_categories_are_teal_and_the_rest_grey)
+In the category chart two bars are teal and three are grey. ... ok
+
+----------------------------------------------------------------------
+Ran 63 tests in 16.085s
+
+OK

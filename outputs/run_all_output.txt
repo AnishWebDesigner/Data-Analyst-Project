@@ -1,0 +1,20 @@
+Step 1 of 5: cleaning the data
+  raw rows 7,084 -> clean rows 7,000 (84 duplicates removed, 6 impossible ages, 77 discounts recomputed, 9 income typos fixed)
+  ok   one row per Transaction_ID
+  ok   no empty Age, Income or Discount
+  ok   Age between 18 and 100
+  ok   Discount between 0 and 0.5
+  ok   Sales = Quantity x Unit_Price x (1 - Discount)
+  ok   Profit = Sales - Cost
+  ok   no delivery before the order
+  ok   2 genders and 4 regions
+  ok   largest income is realistic
+Step 2 of 5: drawing the charts
+  13 charts saved in outputs/charts
+Step 3 of 5: building the visual report
+  2026M01410002_Anish-Kumar_Data_Visualization_Report.pdf: 12 pages, 13 charts, 13 captions
+Step 4 of 5: building the code snapshot
+  2026M01410002_Anish-Kumar_Code_Snapshot.pdf: 13 files, 40 pages
+Step 5 of 5: running the tests
+  OK  (full output in outputs/test_results.txt)
+Done in 22.2 seconds.
